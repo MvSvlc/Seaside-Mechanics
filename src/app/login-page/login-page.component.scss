@@ -11,4 +11,10 @@ mat-card {
 
   mat-form-field {
     display: block;
+    mat-hint {
+      display: block;
+      color: red;
+      text-align: center;
+    }
   }
+ 

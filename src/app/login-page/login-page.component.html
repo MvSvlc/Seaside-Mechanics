@@ -20,8 +20,6 @@
           </mat-form-field>
           <button mat-flat-button (click)="login()">Login</button>
         </form>
-        {{loginForm.controls['username'].value}}
-        {{loginForm.controls['password'].value}}
       </mat-tab>
       <!-- Register Form -->
       <mat-tab label="Register">
@@ -40,10 +38,15 @@
               </mat-form-field>
               <mat-form-field *ngIf="registerForm.controls['password'].value">
                 <mat-label>Password again, idiot</mat-label>
-                <input matInput required type="password" formControlName="valpass" matTooltip="Fuck" [matTooltipDisabled]=matchValidator()>
+                <input matInput required type="password" formControlName="valpass">
+                <mat-hint *ngIf=!matchValidator()>Passwords Do Not Match</mat-hint>
               </mat-form-field>
         </form>
-        <button mat-flat-button *ngIf="registerForm.valid && matchValidator()"  (click)="register()">Register</button>
+        <button mat-flat-button [disabled]="registerForm.invalid && !matchValidator()" (click)="register()">Register</button>
+
+        {{registerForm.invalid}}
+        {{matchValidator()}}
+        {{registerForm.invalid && !matchValidator()}}
         
       </mat-tab>
 

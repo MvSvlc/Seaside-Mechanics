@@ -33,6 +33,12 @@ export class LoginPageComponent implements OnInit {
   }
 
   matchValidator(): boolean {
-    return this.registerForm.controls['password'].value == this.registerForm.controls['valpass'].value
+    if (!this.registerForm.controls['password'].value) {
+      return false
+    }
+    else {
+      return this.registerForm.controls['password'].value == this.registerForm.controls['valpass'].value
+    }
+    
   }
 }
