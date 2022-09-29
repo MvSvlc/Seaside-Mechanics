@@ -14,7 +14,10 @@ import { HomePageComponent } from './home-page/home-page.component';
 import {MatDividerModule} from "@angular/material/divider";
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MatCardModule } from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from "@angular/material/input";
+import {MatTabsModule} from "@angular/material/tabs";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatIconModule,
     MatDividerModule,
     MatCardModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule,
+    MatTabsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

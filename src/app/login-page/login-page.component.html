@@ -1,15 +1,45 @@
-<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+<div class="mat-app-background">
+  <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
     <span>
         <button mat-button routerLink="/"><mat-icon>home</mat-icon></button>
     </span>
-    <div fxLayout="row" fxShow="false" fxShow.gt-sm></div>
-      <!-- <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
-        <mat-icon>menu</mat-icon>
-      </button> -->
-</mat-toolbar>
+  </mat-toolbar>
 
-<mat-card>
-    
-    <mat-card-title>Login</mat-card-title>
-    <mat-card-content>stuff</mat-card-content>
-</mat-card>
+  <mat-card>
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Login">
+        <form [formGroup]="loginForm">
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput required formControlName="username" maxlength="14">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput required formControlName="password">
+          </mat-form-field>
+          <button mat-flat-button (click)="login()">Login</button>
+        </form>
+      </mat-tab>
+      <mat-tab label="Register">
+        <mat-form-field>
+          <mat-label>IC Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password again, idiot</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <button mat-flat-button (click)="register()">Register</button>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>
+

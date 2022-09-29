@@ -28,7 +28,7 @@ export class HomePageComponent implements OnInit {
   enableAnimation = false;
 
   constructor(private sanitize: DomSanitizer) {
-    this.images = ['assets/images/willie-corquette.png', 'assets/images/front-shop.png', 'assets/images/car-work-bmw.png'];
+    this.images = ['assets/images/willie-corquette.png', 'assets/images/front-shop.png', 'assets/images/car-work-bmw.png', 'assets/images/shop.png'];
     this.currentImage = this.images[0];
   }
 
