@@ -7,6 +7,7 @@
 
   <mat-card>
     <mat-tab-group mat-align-tabs="center">
+      <!-- Login Form -->
       <mat-tab label="Login">
         <form [formGroup]="loginForm">
           <mat-form-field>
@@ -15,30 +16,37 @@
           </mat-form-field>
           <mat-form-field>
             <mat-label>Password</mat-label>
-            <input matInput required formControlName="password">
+            <input matInput required type="password" formControlName="password">
           </mat-form-field>
           <button mat-flat-button (click)="login()">Login</button>
         </form>
+        {{loginForm.controls['username'].value}}
+        {{loginForm.controls['password'].value}}
       </mat-tab>
+      <!-- Register Form -->
       <mat-tab label="Register">
-        <mat-form-field>
-          <mat-label>IC Name</mat-label>
-          <input matInput>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Username</mat-label>
-          <input matInput>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Password</mat-label>
-          <input matInput>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Password again, idiot</mat-label>
-          <input matInput>
-        </mat-form-field>
-        <button mat-flat-button (click)="register()">Register</button>
+        <form [formGroup]="registerForm">
+            <mat-form-field>
+                <mat-label>IC Name</mat-label>
+                <input matInput required formControlName="charname">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input matInput required formControlName="username">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput required type="password" formControlName="password">
+              </mat-form-field>
+              <mat-form-field *ngIf="registerForm.controls['password'].value">
+                <mat-label>Password again, idiot</mat-label>
+                <input matInput required type="password" formControlName="valpass" matTooltip="Fuck" [matTooltipDisabled]=matchValidator()>
+              </mat-form-field>
+        </form>
+        <button mat-flat-button *ngIf="registerForm.valid && matchValidator()"  (click)="register()">Register</button>
+        
       </mat-tab>
+
     </mat-tab-group>
   </mat-card>
 </div>
