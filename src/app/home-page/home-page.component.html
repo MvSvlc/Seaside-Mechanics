@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="mat-app-background">
+    <div [@fadeIn]="state" (@fadeIn.done)="onDone()" [style.background-image]="currentImage" id="home">
+    </div>
+  </div>
+  <div class="header">Sea Side</div>
+  <div class="subheader">Mechanics</div>
+  <button mat-flat-button [routerLink]="['./login']">Enter</button>
+</div>
+
+
