@@ -13,6 +13,9 @@ import {MatIconModule} from "@angular/material/icon";
 import { HomePageComponent } from './home-page/home-page.component';
 import {MatDividerModule} from "@angular/material/divider";
 import { NotFoundComponent } from './not-found/not-found.component';
+import { MatCardModule } from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCardModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
